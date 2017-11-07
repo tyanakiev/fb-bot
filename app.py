@@ -55,7 +55,7 @@ def webhook():
                     })
                     name = requests.post("https://graph.facebook.com/{}?fields=name".format(sender_id), params=params,
                                          headers=headers, data=data)
-                    print name
+                    print dir(name)
                     send_message(sender_id, "roger that! {}".format(name))
 
                     sender_id = messaging_event["sender"]["id"]        # the facebook ID of the person sending you the message
